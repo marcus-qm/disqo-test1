@@ -65,11 +65,95 @@ button {
   width: 100%;
 }
 
+.createNoteForm::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  font-size: 18px;
+}
+
+.createNoteForm * {
+  margin: 5px;
+  padding: 5px;
+}
+
+.createNoteForm button {
+  background-color: #57b93e;
+  border: none;
+  border-radius: 5px;
+  width: 20%;
+  color: white;
+}
+
+.createNoteForm .noteTitleInput {
+  /* width: 50%;
+  float: left; */
+}
+
 /* View Notes.js */
+
+.noteslist .noteslist {
+  padding: 15px;
+}
+
+.noteslist .noteItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.noteslist .noteItem * {
+  margin: 5px;
+  padding: 5px;
+}
+
+.noteslist .noteItem button {
+  background-color: #ec3646;
+  border: none;
+  border-radius: 5px;
+  width: 20%;
+  color: white;
+  /* display: block; */
+}
 
 /* responsive */
 
 @media only screen and (min-width: 720px) {
+  .noteTitle {
+    display: block;
+  }
+
+  .noteTitle .noteTitleBtnGroup {
+    float: right;
+    margin: 5px;
+    padding: 5px;
+  }
+
+  .noteTitle .noteTitleBtnGroup button {
+    width: inherit;
+  }
+
+  .createNoteForm input[type="text"] {
+    width: 355px;
+  }
+
+  .createNoteForm textarea {
+    width: 355px;
+  }
+
+  .noteslist input[type="text"] {
+    width: 355px;
+  }
+
+  .noteslist textarea {
+    width: 355px;
+  }
+
+  .noteslist .noteItem {
+    /* display: block; */
+    /* flex-direction: column; */
+  }
+
+  .noteslist .noteItem button {
+    float: right;
+  }
 }
 
 /* Color Legend:
