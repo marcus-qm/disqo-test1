@@ -1,38 +1,92 @@
+button {
+  font-size: 14px;
+}
+
+.DemoTitle {
+  font-size: 24px;
+  color: #333;
+}
+
 .App {
-  text-align: center;
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Note Title.js */
+
+.noteTitle input {
+  margin-top: 5px;
+  width: 80%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.noteTitle label {
+  font-size: 12px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.noteTitle .noteTitleInput {
+  width: 50%;
+  float: left;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.noteTitle .noteTitleBtnGroup {
+  /* display: flex;
+  justify-content: space-around;
+  margin-top: 5px;
+  width: 80%; */
+}
+
+.noteTitle .noteTitleBtnGroup button {
+  padding: 5px;
+}
+
+.noteTitle .noteTitleBtnGroup button {
+  border: none;
+  border-radius: 5px;
+  margin: 1px;
+  /* max-width: 30%; */
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.noteTitle .noteTitleBtnGroup button:first-child {
+  background-color: #39acdc;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.noteTitle .noteTitleBtnGroup button:last-child {
+  background-color: #ec3646;
 }
+
+/* Create Note.js */
+
+.createNoteForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  width: 100%;
+}
+
+/* View Notes.js */
+
+/* responsive */
+
+@media only screen and (min-width: 720px) {
+}
+
+/* Color Legend:
+- Blue: #39ACDC
+- Red: #EC3646
+- Green: #57B93E
+- Text and Input Color: #333
+- Placeholder Color: #AAA
+- Border Color: #CCC
+Fonts:
+- Family: Arial
+- Main title: 24px
+- Input Label: 12px
+- "My Notes" header: 18px
+• All buttons: 14px
+Page is responsive:
+- Max size is 1024 pixels
+- Minimum size is 320 pixels width
+- Text sizes don't need to scale
+- Buttons will drop below the input groups */
