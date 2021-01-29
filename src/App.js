@@ -28,7 +28,7 @@ function App() {
   const saveNotepad = async() => {
     //update
     if (ls('gist-id')) {
-      const savedNoted = await createNotePad({notes, title});
+      const savedNoted = await updateNotePad(ls.get('gist-id'), {notes, title});
       ls('gist-id', savedNoted.data.id);
 
     } else {
@@ -43,6 +43,7 @@ function App() {
   const formatResponseTitle = (data) => JSON.parse((data.data.files.note.content)).title
 
   const handleDeleteNotePad = async() => {
+    console.log('clocked')
     if (ls('gist-id')) {
       const deletedNote = await deleteNotePad(ls.get('gist-id'));
       console.log(deletedNote);
@@ -56,9 +57,19 @@ function App() {
 
   return (
     <div className="App">
-        <NoteTitle onTitleChange={(title) => setTitle(title)} title={title} onSave={() => saveNotepad()} onDelete={() => handleDeleteNotePad()} />
-        <CreateNote onSave={(newNote) => {console.log('ssss');setNotes((currentNotes) => [...currentNotes, {id: nanoid(), ...newNote}])}} />
-        <ViewNotes notes={notes} handleDeleteNote={(id) => handleDeleteNote(id)} />
+        <NoteTitle 
+          onTitleChange={(title) => setTitle(title)} 
+          onSave={saveNotepad} 
+          onDelete={handleDeleteNotePad} 
+          title={title} 
+        />
+        <CreateNote 
+          onSave={(newNote) => setNotes((currentNotes) => [...currentNotes, {id: nanoid(), ...newNote}])} 
+        />
+        <ViewNotes 
+          notes={notes} 
+          handleDeleteNote={(id) => handleDeleteNote(id)} 
+        />
     </div>
   );
 }

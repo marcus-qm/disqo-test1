@@ -10,7 +10,7 @@ export const NoteTitle = ({onSave, onDelete, title, onTitleChange}) => (
 		</div>
 		<div className="noteTitleBtnGroup">
 			<button className="noteTitleFormSaveBtn" onClick={onSave}>Save</button>
-			<button className="noteTitleFormDeleteBtn" onDelete={onDelete}>Delete</button>
+			<button className="noteTitleFormDeleteBtn" onClick={onDelete}>Delete</button>
 		</div>
 	</div>
 )
